@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "ajv": "^6.0.0",
     "apify": "^0.4.32",
+    "commander": "^2.12.2",
     "puppeteer": "^0.13.0",
     "type-check": "^0.3.2"
   },
