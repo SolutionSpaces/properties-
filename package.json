@@ -1,9 +1,10 @@
 {
-  "name": "act-quick-start",
+  "name": "act-solution-space-is24",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
     "apify": "^0.4.32",
+    "puppeteer": "^0.13.0",
     "type-check": "^0.3.2"
   },
   "devDependencies": {},
