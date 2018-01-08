@@ -23,7 +23,7 @@ async function extractNumber(page, selector) {
 Apify.main(async () => {
     const input = await Apify.getValue('INPUT');
     const keys = Object.keys(input).filter((name) => /link_url/.test(name));
-    const links = keys.reduce(function (a, k) { a.push(input[k]); return a; }, [])
+    const links = Array.from(new Set(keys.reduce(function (a, k) { a.push(input[k]); return a; }, [])))
 
     const browser = await puppeteer.launch({
         args: [
