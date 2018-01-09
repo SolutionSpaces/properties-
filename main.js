@@ -66,7 +66,7 @@ Apify.main(async () => {
             price: price,
             rooms: rooms,
             size: size,
-            attributes: attributes.replace('/ ', '/').split(' '),
+            attributes: attributes && attributes.replace('/ ', '/').split(' '),
             proximity: proximity,
             facilities: facilities,
             description: description,
