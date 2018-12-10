@@ -3,14 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "ajv": "^6.0.0",
-    "apify": "^0.4.32",
-    "commander": "^2.12.2",
-    "puppeteer": "^0.13.0",
-    "type-check": "^0.3.2"
+    "ajv": "^6.6",
+    "apify": "^0.9",
+    "commander": "^2.19",
+    "puppeteer": "^1.11",
+    "type-check": "^0.3",
+    "spidergraph": "0.1.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test-local": "export APIFY_DEV_KEY_VALUE_STORE_DIR=./kv-store-dev/|| set APIFY_DEV_KEY_VALUE_STORE_DIR=./kv-store-dev/&& node main.js"
+    "test-local": "export APIFY_LOCAL_STORAGE_DIR=./apify_storage/ && node main.js"
   }
 }
