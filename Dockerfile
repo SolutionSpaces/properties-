@@ -20,8 +20,6 @@ WORKDIR /home/myuser
 # Copy all files and directories from the directory to the Docker image
 COPY . ./
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-
 # Install NPM packages, skip optional and development dependencies to keep the image small,
 # avoid logging to much and show log the dependency tree
 RUN npm install --quiet --only=prod --no-optional
