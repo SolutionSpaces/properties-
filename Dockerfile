@@ -7,13 +7,24 @@
 # For more information, see https://www.apify.com/docs/actor#base-images
 FROM apify/actor-node-chrome
 
+USER root
+WORKDIR /root
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+  python \
+  build-essential
+
+USER myuser
+WORKDIR /home/myuser
+
 # Copy all files and directories from the directory to the Docker image
 COPY . ./
 
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+
 # Install NPM packages, skip optional and development dependencies to keep the image small,
 # avoid logging to much and show log the dependency tree
-RUN npm install --quiet --only=prod --no-optional \
-  && npm list
+RUN npm install --quiet --only=prod --no-optional
 
 # Define that start command
 CMD [ "node", "main.js" ]
